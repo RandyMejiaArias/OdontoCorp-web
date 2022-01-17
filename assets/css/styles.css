@@ -1,5 +1,8 @@
-/* ----- ----- Fonts - Poppins ----- ----- */
+/* ----- ----- Fonts ----- ----- */
+/* ----- ----- Poppins ----- ----- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+/* ----- ----- Roboto Slab ----- ----- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;900&display=swap');
 
 /* ----- ----- Variables CSS ----- ----- */
 :root{
@@ -20,6 +23,7 @@
 
     /* ----- ----- Font & Typography ----- ----- */
     --body-font: 'Poppins', sans-serif;
+    --title-font: 'Roboto Slab', serif;
     --biggest-font-size: 2rem;
     --h1-font-size: 1.5rem;
     --h2-font-size: 1.25rem;
@@ -82,6 +86,7 @@ body{
 h1, h2, h3, h4{
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
+    font-family: var(--title-font);
 }
 
 ul{
