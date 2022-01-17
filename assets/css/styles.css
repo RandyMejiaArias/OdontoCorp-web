@@ -712,6 +712,266 @@ button{
     border-radius: .5rem;
 }
 
+/* ----- ----- Calendar ----- ----- */
+.calendar__content{
+    place-items: center;
+    margin-bottom: var(--mb-1-5);
+}
+
+.calendar {
+    background-color: var(--container-color);
+    border-radius: 2rem;
+    padding: 1.25rem;
+    position: relative;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+    padding: .5rem;
+}
+
+.calendar-body {
+    padding: .25rem;
+}
+
+.calendar-week-day {
+    height: 3rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: var(--font-medium);
+    font-size: var(--small-font-size);
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--text-color);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+}
+
+.calendar-days div {
+    width: 1.12rem;
+    height: 1.12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+    /* border-radius: 50%; */
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div:hover span {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: var(--title-color);
+}
+
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3) {
+    height: 100%;
+}
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    background-color: var(--title-color);
+}
+
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4) {
+    width: 100%;
+}
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+.calendar-days div:hover span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.calendar-days div:hover span:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    background-color: var(--first-color-send);
+    color: var(--container-color);
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--body-color);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: var(--body-color);
+}
+
+.month-list {
+    border-radius: 2rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: var(--small-font-size);
+    background-color: var(--container-color);
+    padding: 1.25rem;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: .25rem .25rem;
+    border-radius: .5rem;
+    text-align: center;
+    cursor: pointer;
+    color: var(--title-color);
+}
+
+.month-list > div > div:hover {
+    background-color: var(--body-color);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.booking__form{
+    background-color: var(--container-color);
+    padding: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    justify-content: space-between;
+    border-radius: .75rem;
+    margin-bottom: var(--mb-1-5);
+}
+
+.booking-hour{
+    background-color: var(--body-color);
+    height: 2rem;
+    border-radius: .5rem;
+    padding: 0.5rem;
+    text-align: center;
+    align-items: center;
+    font-size: var(--small-font-size);
+    line-height: var(--small-font-size);
+}
+
+.booking-hour.unavaliable{
+    background-color: var(--first-color-alt);
+    color: var(--body-color);
+}
+
+.booking-hour.unavaliable:hover{
+    background-color: var(--first-color-alt);
+    cursor: default;
+}
+
+.booking-hour:hover{
+    background-color: var(--first-color-send);
+    color: var(--body-color);
+    cursor: pointer;
+}
+
+.btn-booking{
+    display: flex;
+    justify-content: center;
+}
+
 /* ----- ----- Breakpoints ----- ----- */
 /* ----- ----- For Small Devices ----- ----- */
 @media screen and (max-width: 320px) {
@@ -858,6 +1118,33 @@ button{
         justify-content: center;
         column-gap: 1rem;
     }
+
+    .booking{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .booking__container{
+        width: 100%;
+    }
+
+    .calendar-week-day, .calendar-days{
+        font-size: var(--normal-font-size);
+    }
+
+    .calendar-header{
+        font-size: var(--h1-font-size);
+    }
+
+    .month-list {
+        font-size: var(--h3-font-size);
+    }
+
+    .calendar-days div{
+        width: 3rem;
+        height: 3rem;
+    }
 }
 
 /* ----- ----- For Large Devices ----- ----- */
@@ -959,6 +1246,18 @@ button{
 
     .new__title{
         font-size: var(--h3-font-size);
+    }
+
+    .booking__form{
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .booking-hour{
+        padding: 1rem;
+        height: 3rem;
+        font-size: var(--h2-font-size);
+        line-height: var(--h2-font-size);
     }
 
     .footer__copy{
