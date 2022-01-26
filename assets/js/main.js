@@ -31,6 +31,10 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 let homeSwiper = new Swiper(".home-swiper", {
     spaceBetween: 30,
     loop: 'true',
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: "#home-swiper-pagination",
     }
@@ -50,6 +54,10 @@ let newSwiper = new Swiper(".new-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 16,
     loop: 'true',
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
