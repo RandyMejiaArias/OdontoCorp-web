@@ -10,17 +10,20 @@
 
     /* ----- ----- Colors ----- ----- */;
     --first-color: #508D8E;
-    --first-color-alt: #547575;
+    --first-color-alt: #0b1232;
     --first-color-send: #162568;
-    --title-color: #161212;
+    --title-color: #ffffff;
+    --text-color: #161212;
+    --text-color-light: #918a88;
+    /* --title-color: #161212;
     --text-color: #5B5757;
-    --text-color-light: #8F8A8A;
-    --body-color: #f2f2f2;
-    --container-color: #fff;
+    --text-color-light: #8F8A8A; */
+    --body-color: linear-gradient(90deg, hsl(182, 63%, 68%) 0%, hsl(181, 28%, 44%) 100%);
+    --container-color: linear-gradient(136deg, hsl(182, 63%, 63%) 0%, hsl(181, 28%, 35%) 100%);
 
     --steel-teal: hsl(181, 28%, 44%); /* ----- ----- RGB: (80, 141, 142) HEX #508D8E ----- ----- */
     --royal-blue-dark: hsl(229, 65%, 25%); /* ----- ----- RGB: (22, 37, 104) HEX #162568 ----- ----- */
-
+    
     /* ----- ----- Font & Typography ----- ----- */
     --body-font: 'Poppins', sans-serif;
     --title-font: 'Roboto Slab', serif;
@@ -223,7 +226,8 @@ button{
 
 /* ----- ----- Change Background Header ----- ----- */
 .scroll-header{
-    background-color: var(--container-color);
+    /* background: var(--container-color); */
+    backdrop-filter: blur(10px);
 }
 
 /* ----- ----- Active Link ----- ----- */
@@ -256,6 +260,7 @@ button{
 .home__img{
     height: 250px;
     justify-self: center;
+    border-radius: 50%;
 }
 
 .home__indicator{
@@ -314,8 +319,8 @@ button{
 /* ----- ----- Buttons ----- ----- */
 .button{
     display: inline-block;
-    background-color: var(--first-color);
-    color: var(--body-color);
+    background-color: var(--first-color-send);
+    color: var(--title-color);
     padding: 1rem 1.75rem;
     border-radius: 0.5rem;
     font-weight: var(--font-medium);
@@ -417,43 +422,43 @@ button{
     justify-self: center;
 }
 
-/* ----- ----- Trick or Treat ----- ----- */
-.trick__container{
+/* ----- ----- Services ----- ----- */
+.service__container{
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     padding-top: 1rem;
 }
 
-.trick__content{
+.service__content{
     position: relative;
-    background-color: var(--container-color);
+    background: var(--container-color);
     border-radius: 1rem;
     padding: 1.5rem 0 1rem 0;
     text-align: center;
     overflow: hidden;
 }
 
-.trick__img{
+.service__img{
     width: 150px;
     transition: .3s;
 }
 
-.trick__subtitle, .trick__price{
+.service__subtitle, .service__price{
     display: block;
 }
 
-.trick__subtitle{
+.service__subtitle{
     font-size: var(--smaller-font-size);
     margin-bottom: var(--mb-0-5);
 }
 
-.trick__title, .trick__price{
+.service__title, .service__price{
     color: var(--title-color);
     font-weight: var(--font-medium);
     font-size: var(--normal-font-size);
 }
 
-.trick__button{
+.service__button{
     display: inline-flex;
     padding: .5rem;
     border-radius: .25rem .25rem .75rem .25rem;
@@ -462,16 +467,16 @@ button{
     bottom: 0;
 }
 
-.trick__icon{
+.service__icon{
     font-size: 1.25rem;
     color: var(--body-color);
 }
 
-.trick__content:hover .trick__img{
+.service__content:hover .service__img{
     transform: translateY(-.5rem);
 }
 
-.trick__content:hover .trick__button{
+.service__content:hover .service__button{
     right: 0;
 }
 
@@ -490,12 +495,20 @@ button{
 .discount__title{
     font-size: var(--h2-font-size);
     margin-bottom: var(--mb-2);
-    color: var(--body-color);
+    color: var(--title-color);
 }
 
 .discount__img{
     width: 200px;
     justify-self: center;
+}
+
+.discount__button{
+    background-color: var(--first-color);
+}
+
+.discount__button:hover{
+    background-color: #427576;
 }
 
 /* ----- ----- New Arrivlas ----- ----- */
@@ -717,213 +730,6 @@ button{
     border-radius: .5rem;
 }
 
-/* ----- ----- Calendar ----- ----- */
-.calendar__content{
-    place-items: center;
-    margin-bottom: var(--mb-1-5);
-}
-
-.calendar {
-    background-color: var(--container-color);
-    border-radius: 2rem;
-    padding: 1.25rem;
-    position: relative;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-semi-bold);
-    color: var(--title-color);
-    padding: .5rem;
-}
-
-.calendar-body {
-    padding: .25rem;
-}
-
-.calendar-week-day {
-    height: 3rem;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: var(--font-medium);
-    font-size: var(--small-font-size);
-}
-
-.calendar-week-day div {
-    display: grid;
-    place-items: center;
-    color: var(--text-color);
-}
-
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    color: var(--text-color);
-    font-size: var(--small-font-size);
-}
-
-.calendar-days div {
-    width: 1.12rem;
-    height: 1.12rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    position: relative;
-    cursor: pointer;
-    animation: to-top 1s forwards;
-    /* border-radius: 50%; */
-}
-
-.calendar-days div span {
-    position: absolute;
-}
-
-.calendar-days div:hover span {
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-}
-
-.calendar-days div span:nth-child(1),
-.calendar-days div span:nth-child(3) {
-    width: 2px;
-    height: 0;
-    background-color: var(--title-color);
-}
-
-.calendar-days div:hover span:nth-child(1),
-.calendar-days div:hover span:nth-child(3) {
-    height: 100%;
-}
-
-.calendar-days div span:nth-child(1) {
-    bottom: 0;
-    left: 0;
-}
-
-.calendar-days div span:nth-child(3) {
-    top: 0;
-    right: 0;
-}
-
-.calendar-days div span:nth-child(2),
-.calendar-days div span:nth-child(4) {
-    width: 0;
-    height: 2px;
-    background-color: var(--title-color);
-}
-
-.calendar-days div:hover span:nth-child(2),
-.calendar-days div:hover span:nth-child(4) {
-    width: 100%;
-}
-
-.calendar-days div span:nth-child(2) {
-    top: 0;
-    left: 0;
-}
-
-.calendar-days div span:nth-child(4) {
-    bottom: 0;
-    right: 0;
-}
-
-.calendar-days div:hover span:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.calendar-days div:hover span:nth-child(3) {
-    transition-delay: 0.4s;
-}
-
-.calendar-days div:hover span:nth-child(4) {
-    transition-delay: 0.6s;
-}
-
-.calendar-days div.curr-date,
-.calendar-days div.curr-date:hover {
-    background-color: var(--first-color-send);
-    color: var(--container-color);
-    border-radius: 50%;
-}
-
-.calendar-days div.curr-date span {
-    display: none;
-}
-
-.month-picker {
-    padding: 5px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.month-picker:hover {
-    background-color: var(--body-color);
-}
-
-.year-picker {
-    display: flex;
-    align-items: center;
-}
-
-.year-change {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-}
-
-.year-change:hover {
-    background-color: var(--body-color);
-}
-
-.month-list {
-    border-radius: 2rem;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    font-size: var(--small-font-size);
-    background-color: var(--container-color);
-    padding: 1.25rem;
-    grid-template-columns: repeat(3, auto);
-    gap: 5px;
-    display: grid;
-    transform: scale(1.5);
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.month-list.show {
-    transform: scale(1);
-    visibility: visible;
-    pointer-events: visible;
-    transition: all 0.2s ease-in-out;
-}
-
-.month-list > div {
-    display: grid;
-    place-items: center;
-}
-
-.month-list > div > div {
-    width: 100%;
-    padding: .25rem .25rem;
-    border-radius: .5rem;
-    text-align: center;
-    cursor: pointer;
-    color: var(--title-color);
-}
-
-.month-list > div > div:hover {
-    background-color: var(--body-color);
-}
-
 @keyframes to-top {
     0% {
         transform: translateY(100%);
@@ -933,48 +739,6 @@ button{
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-.booking__form{
-    background-color: var(--container-color);
-    padding: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    gap: .5rem;
-    justify-content: space-between;
-    border-radius: .75rem;
-    margin-bottom: var(--mb-1-5);
-}
-
-.booking-hour{
-    background-color: var(--body-color);
-    height: 2rem;
-    border-radius: .5rem;
-    padding: 0.5rem;
-    text-align: center;
-    align-items: center;
-    font-size: var(--small-font-size);
-    line-height: var(--small-font-size);
-}
-
-.booking-hour.unavaliable{
-    background-color: var(--first-color-alt);
-    color: var(--body-color);
-}
-
-.booking-hour.unavaliable:hover{
-    background-color: var(--first-color-alt);
-    cursor: default;
-}
-
-.booking-hour:hover{
-    background-color: var(--first-color-send);
-    color: var(--body-color);
-    cursor: pointer;
-}
-
-.btn-booking{
-    display: flex;
-    justify-content: center;
 }
 
 /* ----- ----- Breakpoints ----- ----- */
@@ -1003,7 +767,7 @@ button{
         width: 100%;
     }
 
-    .category__container, .trick__container{
+    .category__container, .service__container{
         grid-template-columns: .8fr;
         justify-content: center;
     }
@@ -1090,7 +854,7 @@ button{
         width: 250px;
     }
 
-    .trick__container{
+    .service__container{
         grid-template-columns: repeat(3,200px);
         justify-content: center;
         gap: 2rem;
@@ -1123,33 +887,6 @@ button{
         justify-content: center;
         column-gap: 1rem;
     }
-
-    .booking{
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-    }
-
-    .booking__container{
-        width: 100%;
-    }
-
-    .calendar-week-day, .calendar-days{
-        font-size: var(--normal-font-size);
-    }
-
-    .calendar-header{
-        font-size: var(--h1-font-size);
-    }
-
-    .month-list {
-        font-size: var(--h3-font-size);
-    }
-
-    .calendar-days div{
-        width: 3rem;
-        height: 3rem;
-    }
 }
 
 /* ----- ----- For Large Devices ----- ----- */
@@ -1173,8 +910,8 @@ button{
     }
 
     .home__img{
-        height: 400px;
-        transform: translateY(-3rem);
+        max-height: 300px;
+        width: 400px;
     }
 
     .home__indicator{
@@ -1219,15 +956,15 @@ button{
         padding-right: 2rem;
     }
 
-    .trick__container{
+    .service__container{
         gap: 3.5rem;
     }
 
-    .trick__img{
+    .service__img{
         width: 170px;
     }
 
-    .trick__title{
+    .service__title{
         font-size: var(--h3-font-size);
     }
 
@@ -1251,18 +988,6 @@ button{
 
     .new__title{
         font-size: var(--h3-font-size);
-    }
-
-    .booking__form{
-        padding: 2rem;
-        gap: 1.5rem;
-    }
-
-    .booking-hour{
-        padding: 1rem;
-        height: 3rem;
-        font-size: var(--h2-font-size);
-        line-height: var(--h2-font-size);
     }
 
     .footer__copy{
