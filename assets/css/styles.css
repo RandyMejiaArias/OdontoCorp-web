@@ -1003,6 +1003,10 @@ button{
 }
 
 @media screen and (min-width:1441px ) {
+    h3{
+        font-size: 1.8rem;
+    }
+
     .container{
         max-width: 1820px;
     }
@@ -1044,8 +1048,32 @@ button{
         width: 350px;
     }
 
+    .service__title{
+        font-size: 1.5rem;
+        margin-top: var(--mb-0-5);
+    }
+
+    .about__title{
+        font-size: 3rem;
+        margin-bottom: var(--mb-2);
+        text-align: center;
+    }
+
+    .about__description {
+        text-align: justify;
+        font-size: 1.75rem;
+    }
+
+    .about__data {
+        text-align: center;
+    }
+
     .discount__container{
         column-gap: 15rem;
+    }
+
+    .discount__title{
+        font-size: 2rem;
     }
 
     .discount__img{
