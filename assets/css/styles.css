@@ -422,6 +422,10 @@ button{
     justify-self: center;
 }
 
+.about__img.about__img-team{
+    width: 350px;
+}
+
 /* ----- ----- Services ----- ----- */
 .service__container{
     grid-template-columns: repeat(2, 1fr);
@@ -1057,7 +1061,7 @@ button{
         width: 200px;
     }
 
-    .about__img{
+    .about__img, .about__img.about__img-team{
         width: 500px;
     }
 
@@ -1171,7 +1175,7 @@ button{
         min-width: 370px;
     }
     
-    .about__img{
+    .about__img, .about__img.about__img-team{
         width: 900px;
     }
 
