@@ -459,7 +459,6 @@ button{
 .service__title, .service__price{
     color: var(--title-color);
     font-weight: var(--font-medium);
-    font-size: var(--normal-font-size);
 }
 
 .service__button{
@@ -632,6 +631,10 @@ button{
     row-gap: 2rem;
 }
 
+.footer__content{
+    text-align: center;
+}
+
 .footer__logo{
     display: flex;
     align-items: center;
@@ -649,18 +652,13 @@ button{
     margin-bottom: var(--mb-2-5);
 }
 
-.footer__social{
-    display: flex;
-    column-gap: .75rem;
-}
-
 .footer__social-link{
     display: inline-flex;
     background-color: var(--container-color);
     padding: .25rem;
     border-radius: .25rem;
     color: var(--title-color);
-    font-size: 1rem;
+    font-size: 3rem;
 }
 
 .footer__social-link:hover{
@@ -962,18 +960,12 @@ button{
         order: -1;
     }
 
-    .discount__data{
-        padding-right: 6rem;
-    }
-
     .newsletter__container{
         grid-template-columns: .5fr;
     }
 
     .footer__container{
-        grid-template-columns: repeat(4, 1fr);
         justify-content: center;
-        column-gap: 1rem;
     }
 
     .modal{
@@ -1075,10 +1067,6 @@ button{
 
     .service__img{
         width: 170px;
-    }
-
-    .service__title{
-        font-size: var(--h3-font-size);
     }
 
     .discount__container{
@@ -1190,7 +1178,7 @@ button{
     }
 
     .service__title{
-        font-size: 1.5rem;
+        font-size: 3rem;
         margin-top: var(--mb-0-5);
     }
 
